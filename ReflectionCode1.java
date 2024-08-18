@@ -1,31 +1,30 @@
-import java.lang.reflect.Method;
-
-public class ReflectionCode1 {
-    public static void main(String[] args){
-        
-
+public class ReflectionCode1{
+    public static void main(String[] args) {
+        System.out.println("\n");
         
         try {
-            Class<?> cls = Class.forName("Animal");
-            Object obj = cls.getDeclaredConstructor().newInstance();
+            Class <?> cls =Class.forName("java.lang.String");
 
-            Method method = cls.getMethod("makeSound");
-    
-            method.invoke(obj);
-        
-            
-        } catch (Exception e) {
+            System.out.println(cls.getName());
+
+            System.out.println("Super Class : "+cls.getSuperclass().getName());
+
+            Class <?>[] interfa = cls.getInterfaces();
+            System.out.println("Interfaces: ");
+
+            for(Class<?> iface : interfa){
+                System.out.println(" "+iface.getName());
+            }
+
+        } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-       
-        
-    }
-}
 
-class Animal {
-    public void makeSound(){
-        System.out.println("Animal is a Sounds ....");
+
+
+        System.out.println("\n");
+
     }
 }
