@@ -1,4 +1,4 @@
-public class ReflectionCode1{
+public class ReflectionObjectObtaining{
     public static void main(String[] args) {
         System.out.println("\n");
         
